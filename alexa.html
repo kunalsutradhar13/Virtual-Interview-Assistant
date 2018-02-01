@@ -1,0 +1,69 @@
+<html>
+<head><title> Virtual Interview Assistant </title>
+</head>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<style>
+
+#grad {
+    background: linear-gradient(#31465F, #152939);
+}
+.cen{
+	display: flex;
+    justify-content: center;
+}
+#myDIV {
+    transform:scale(0.5,0.5);
+}
+#myDIV2 {
+    transform:scale(0.9,0.6);
+}
+.jumbotron{
+	padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<body id="grad">
+<header class="jumbotron">
+	<div class="container">
+		<h1 class="cen"><span class="glyphicon glyphicon-tent"></span>Welcome to Hackathon</h1>
+		<p class="cen">Welcome to 2018 hackathon. Process your resume here and get a chance to talk to alexa</p>
+		<div class="cen">
+			<img src ="alexa.png" id = "myDIV2">
+			<img id = "myDIV" src ="ibm-watson.png" >
+		</div>
+	</div>
+</header>
+<form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data" id="file_form">
+	<div class="cen">
+		<!--input type="file" value="Upload Resume" class = "btn btn-primary" style="width: 20%;
+		    height: 8%;
+		    background-color: #25C9D0 !important;
+		    font-family: 'Lato', sans-serif;
+		    font-size: 18px;" >
+		</input-->
+		<label class="btn btn-default btn-file" style="width: 20%;
+		    height: 8%;
+		    background-color: #25C9D0 !important;
+		    font-family: 'Lato', sans-serif;
+		    font-size: 18px;color:white;padding: 12">
+    	Upload Resume <input type="file" style="display: none;" id="new_file" name="file">
+		</label>	
+	</div>
+</form>
+
+
+
+</body>
+<script type="text/javascript">
+	$("#new_file").on('change', function() {
+         $("#file_form").submit();
+});
+</script>
+
+</html> 

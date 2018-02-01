@@ -1,0 +1,7 @@
+welcome: Welcome to Virtual Interview System. I am here to give you a complete interview experience. Before we start, could we introduce each other. I am Alexa. Can I have your name?
+
+round: Can you repeat the numbers {{ numbers|join(", ") }} backwards?
+
+win: Good job!
+
+lose: Sorry, that's the wrong answer.
